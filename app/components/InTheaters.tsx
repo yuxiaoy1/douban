@@ -1,8 +1,9 @@
-import { getMoviesInTheaters } from '../lib/douban'
+import { getMoviesInTheaters } from '@/app/lib/douban'
+import { MovieType, MoviesType } from '@/app/lib/types'
 import SimpleMovieCard from './SimpleMovieCard'
 
 export default async function InTheaters() {
-  let movies = await getMoviesInTheaters({
+  let movies: MoviesType = await getMoviesInTheaters({
     start: 0,
     count: 10,
     city: '',

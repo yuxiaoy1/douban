@@ -1,11 +1,9 @@
 import { getMoviesTop250 } from '../lib/douban'
+import { MoviesType } from '../lib/types'
 import SimpleMovieCard from './SimpleMovieCard'
 
 export default async function Top250() {
-  let movies = await getMoviesTop250({
-    start: 0,
-    count: 10,
-  })
+  let movies: MoviesType = await getMoviesTop250({ start: 0, count: 10 })
 
   return (
     <div className='flex flex-col gap-2'>

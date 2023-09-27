@@ -1,9 +1,7 @@
-import { searchMovies } from '../lib/douban'
+import { MoviesType } from '../lib/types'
 import MovieCard from './MovieCard'
 
-export default async function MovieCards({ q }) {
-  let movies = await searchMovies(q)
-
+export default async function MovieCards({ movies }: { movies: MoviesType }) {
   return (
     <div className='flex flex-col gap-6'>
       {movies?.subjects?.map(movie => (
